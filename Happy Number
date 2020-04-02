@@ -1,0 +1,33 @@
+class Solution {
+public:
+    int calc(int temp)
+    {
+        int sum=0;
+         while(temp>0)
+        {
+            int a=temp%10;
+             sum=sum+(a*a);
+             temp=temp/10;
+            
+        }
+        return sum;
+        
+    }
+    bool isHappy(int n) {
+        
+        int ans=calc(n);
+        int b=5;
+         if(ans==1)
+             return true;
+        else
+        {
+            while(b--)
+            {
+            int ans=calc(ans);
+             if(ans==1)
+                 return true;
+            }
+        }
+        return false;
+    }
+};
